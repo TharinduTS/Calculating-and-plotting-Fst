@@ -15,7 +15,7 @@ for i in Chr1L Chr1S Chr2L Chr2S Chr3L Chr3S Chr4L Chr4S Chr5L Chr5S Chr6L Chr6S
 
 # Calculating Fst- all chromosomes
 ```
-for_fst]$ for i in Chr1L Chr1S Chr2L Chr2S Chr3L Chr3S Chr4L Chr4S Chr5L Chr5S Chr6L Chr6S Chr7L Chr7S Chr8L Chr8S Chr9_10L Chr9_10S; do vcftools --vcf splitted/$i\.recode.vcf --weir-fst-pop females --weir-fst-pop males --fst-window-size 500000 --fst-window-step 500000 --out out/Fst_Cam_F_Vs_M_$i; done
+for i in Chr1L Chr1S Chr2L Chr2S Chr3L Chr3S Chr4L Chr4S Chr5L Chr5S Chr6L Chr6S Chr7L Chr7S Chr8L Chr8S Chr9_10L Chr9_10S; do vcftools --vcf splitted/$i\.recode.vcf --weir-fst-pop females --weir-fst-pop males --fst-window-size 500000 --fst-window-step 500000 --out out/Fst_Cam_F_Vs_M_$i; done
 ```
 # Download
 ```
