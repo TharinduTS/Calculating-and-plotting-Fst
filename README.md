@@ -8,6 +8,7 @@ vcf-query -l input.vcf
 select sample sets from above (sample names/for different populations etc.) and save them in seperate files(can use nano/Vi)
 eg: as males and females
 
+***********old********************************
 # Recode- all chromosomes
 ```
 for i in Chr1L Chr1S Chr2L Chr2S Chr3L Chr3S Chr4L Chr4S Chr5L Chr5S Chr6L Chr6S Chr7L Chr7S Chr8L Chr8S Chr9_10L Chr9_10S; do vcftools --vcf mpileup_raw_wildBorealis_AustinGenome.vcf --chr $i --recode --recode-INFO-all --out $i; done
@@ -16,6 +17,13 @@ for i in Chr1L Chr1S Chr2L Chr2S Chr3L Chr3S Chr4L Chr4S Chr5L Chr5S Chr6L Chr6S
 # Calculating Fst- all chromosomes
 ```
 for i in Chr1L Chr1S Chr2L Chr2S Chr3L Chr3S Chr4L Chr4S Chr5L Chr5S Chr6L Chr6S Chr7L Chr7S Chr8L Chr8S Chr9_10L Chr9_10S; do vcftools --vcf splitted/$i\.recode.vcf --weir-fst-pop females --weir-fst-pop males --fst-window-size 500000 --fst-window-step 500000 --out out/Fst_Cam_F_Vs_M_$i; done
+
+```
+************************************************
+# combining above both
+
+,,,bash
+for i in Chr1 Chr2 Chr3 Chr Chr5 Chr6 Chr7 Chr8 Chr9 Chr10; do vcftools --vcf ../vcf_input/Trop_merged_sorted.bam.vcf --chr $i --weir-fst-pop ../populations/females --weir-fst-pop ../populations/males --fst-window-size 500000 --fst-window-step 500000 --out ../out/Fst_all_with_sierra_F_Vs_M_$i; done
 ```
 # Download
 ```
