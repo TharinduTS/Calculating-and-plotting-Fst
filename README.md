@@ -23,7 +23,7 @@ for i in Chr1L Chr1S Chr2L Chr2S Chr3L Chr3S Chr4L Chr4S Chr5L Chr5S Chr6L Chr6S
 
 # combining above both
 
-,,,bash
+```bash
 for i in Chr1 Chr2 Chr3 Chr Chr5 Chr6 Chr7 Chr8 Chr9 Chr10; do vcftools --vcf ../vcf_input/Trop_merged_sorted.bam.vcf --chr $i --weir-fst-pop ../populations/females --weir-fst-pop ../populations/males --fst-window-size 500000 --fst-window-step 500000 --out ../out/Fst_all_with_sierra_F_Vs_M_$i; done
 ```
 # Download
